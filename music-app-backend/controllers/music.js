@@ -1,12 +1,11 @@
+const express = require('express')
+const router = express.Router();
 const Musics = require('../models/music');
-
-
-
 
 
 //SOON TO BE INDEX ROUTE
 router.get('/', (req, res)=>{
-    Todos.find({}, (err, foundSong)=>{
+    Musics.find({}, (err, foundSong)=>{
         res.json(foundSong);
     });
 });
@@ -45,3 +44,5 @@ router.post('/', (req, res)=>{
         res.json(createdSong); //.json() will send proper headers in response so client knows it's json coming back
     });
 });
+
+module.exports = router
